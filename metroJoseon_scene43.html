@@ -1,0 +1,73 @@
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>월드플레이 - Rule,Role,Play Your World!</title>
+  </head>
+  <body style="background-color:#E8C585">
+    <div id="game-title">
+      <h1>삼봉 정도전의 두번째 미션: 경복궁설계 - 근정전</h1>
+    </div>
+
+    <br>
+    <br>
+
+  <div class="storyquest">
+    <img src="김학수북궐도.jpg" alt="경복궁 내부지도">
+    <p> 흔히 사방신이란 청룡, 주작, 백호, 현무를 말한다. <br>
+      주작의 위치를 찾았으니 다른 사방신의 위치도 찾아보자. <br><br>
+  <br>
+
+     <br>
+    </p>
+
+    <div class="answer" style="background-color:#E8C585">
+      <p> 백호는 어디에 놓여야 할까?
+    </div>
+
+
+    <form name="form_id">
+     <input type="radio" name="direction" value="v1">상월대 동쪽<br>
+     <input type="radio" name="direction" value="v2">상월대 서쪽<br>
+     <input type="radio" name="direction" value="v3">상월대 북쪽<br>
+     <input type="button" class="btn btn-primary" name="선택" value="이동한다" onclick="go()">
+    </form>
+    <p id="check"></p>
+
+
+    <script language=javascript>
+    function go(){
+    if(document.form_id.direction[1].checked==true){
+      window.location.href="metroJoseon_scene45.html";//현재페이지의 주소를 해당페이지로 바꿉니다.
+    }else if (document.form_id.direction[0].checked==true) {
+      window.location.href="metroJoseon_scene44.html";
+    }else if (document.form_id.direction[2].checked==true) {
+      window.location.href="metroJoseon_scene46.html";
+    }else{
+      location.href="noname3.html";
+    }
+    };
+    </script>
+
+<!--
+    <button type="button" name="button" onclick="go();">상월대 동쪽</button> <br><br>
+    <button type="button" name="button" onclick="go2();">상월대 서쪽</button> <br><br>
+    <button type="button" name="button" onclick="go3();">상월대 북쪽</button> <br><br>
+
+
+    <script type="text/javascript">
+    function go(){
+      location.replace("metroJoseon_scene44.html");
+    }
+    function go2(){
+      location.replace("metroJoseon_scene45.html");
+    }
+    function go3(){
+      location.replace("metroJoseon_scene46.html");
+    }
+    </script> --->
+  </body>
+</html>

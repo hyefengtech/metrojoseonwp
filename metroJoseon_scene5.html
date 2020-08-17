@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link href="js/bootstrap.min.js" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>월드플레이 - Rule,Role,Play Your World!</title>
+<!---
+    <script>
+      function Name(){
+        let name = prompt("당신의 이름은?"," ");
+        document.write(name + " 반가워요. 삼봉 정도전의 초대에 응해주셔서 감사합니다." + "  새로고침을 누른 뒤 '입력하기' 밑의 '다음으로' 버튼을 눌러 게임을 계속 진행하세요.");
+      }
+
+    </script>
+    <script>
+    function go2(){
+      location.replace("metroJoseon_scene6.html");
+    }
+    </script>
+--->
+
+</head>
+
+  <body style="background-color:#E8C585">
+  <div id="game-title">
+    <h1>당신의 이름은?</h1>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="storyquest">
+    <p>플레이 할 이름을 적으시오.</p>
+  </div>
+
+
+  <div class="choice">
+
+      <input type="text" id="input"><br>
+      <button type="submit" class="btn btn-primary" onclick="input();">입력하기</button> <br><br>
+
+<!---
+  <form action="metroJoseon_scene6.html" method="get">
+      <input type="submit" value="입력하기"></button> <br><br>
+    </form>
+    <button type="button" name="button" onclick="go2();">다음으로</button>
+  </div>
+--->
+
+  <button class="btn btn-primary" onclick="output();go();">다음으로</button> <br><br>
+  "<span id="output"></span> , 그대 나와 함께 조선을 건국하지 않겠나?"
+
+</body>
+<!-- 아래부터 자바스크립트 -->
+
+<script type="text/javascript">
+var temp;
+
+function input(){
+var input = document.getElementById("input").value;
+temp = input;
+}
+
+function output(){
+document.getElementById("output").value = temp;
+document.getElementById("output").innerHTML = temp;
+}
+
+function go(){
+  location.replace("metroJoseon_scene6.html");
+}
+
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>leaflet map example</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+  <style>#map { height: 500px; }</style>
+</head>
+
+<body style="background-color:#E8C585">
+  <div id="map">
+    <script type="text/javascript">
+      var map = L.map('map').setView([37.5784869, 126.9769228],17);
+
+      var marker = L.marker([37.5784869,126.9769228]).addTo(map)
+          .bindPopup('퀘스트!!')
+          .openPopup();
+
+      var marker2 = L.marker([37.578960,126.975931]).addTo(map)
+          .bindPopup('퀘스트!!')
+          .openPopup();
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    function onMarkerClick(event) {
+      marker
+        .openOn(go());
+    }
+
+    function onMarkerClick2(event) {
+      marker2
+        .openOn(go2());
+    }
+
+    function go(){
+      location.replace("metroJoseon_scene25.html");
+    }
+
+    function go2(){
+      location.replace("metroJoseon_scene30.html");
+    }
+
+    marker.on('click', onMarkerClick);
+    marker2.on('click', onMarkerClick2);
+
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>월드플레이 - Rule,Role,Play Your World!</title>
+  </head>
+  <body style="background-color:#E8C585">
+    <div id="game-title">
+      <h1>삼봉 정도전의 두번째 미션: 경복궁설계 - 근정전</h1>
+    </div>
+
+    <br>
+    <br>
+
+  <div class="storyquest">
+    <img src="김학수북궐도.jpg" alt="경복궁 내부지도">
+    <p> "지금 경복궁에서 뭘 하고 있는 거냐고? 보다시피 중건하고 있지." <br><br>
+      <br>
+      <br>
+        <br>
+ </p>
+
+ <div class="hint_askSambong" style="background-color:#E8C585">
+   <p>이 대사에서 신경쓰이는 지점이 무엇일까?
+ </div>
+
+ <div class="answer">
+   <form name=form_id>
+     <input name=textbox_id type="text" id="answer" placeholder="입력하세요.">
+     <br>
+     <br>
+   </form>
+   <button type="button" class="btn btn-primary" name="button" onclick="To_Noname();" value="이동">입력</button>
+   <br>
+   <br>
+ </div>
+ </body>
+
+ <script language=javascript>
+ function To_Noname(){
+ if(document.form_id.textbox_id.value === "중건"){
+ window.location.href="metroJoseon_scene34cheonhidden11.html";//현재페이지의 주소를 해당페이지로 바꿉니다.
+ }else{
+ location.href="noname3.html";
+ }
+ };
+ </script>
+
+  </body>
+</html>

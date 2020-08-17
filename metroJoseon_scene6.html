@@ -1,0 +1,60 @@
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>월드플레이 - Rule,Role,Play Your World!</title>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <style type="text/css">
+      a { text-decoration:none }
+    </style>
+  </head>
+
+  <body style="background-color:#E8C585">
+    <div id="game-title">
+      <h1>삼봉 정도전의 첫번째 미션</h1>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="storyquest">
+    <img src="정도전초상화.jpg" alt="삼봉정도전 초상화" /> <br> <br>
+    <p>"그대 나와 함께 조선을 건국하지 않겠나?"</p> <br>
+
+    <p>삼봉의 제안에 대한 나의 대답은?</p> <br>
+
+    <div><a href="https://pf.kakao.com/_Bftuxb/chat">삼봉정도전과 대화하기</a></div> <br><br>
+
+<button type="button" class="btn btn-primary" name="button" onclick="go();">제안에 응했다</button> <br><br>
+<button type="button" class="btn btn-primary" name="button" onclick="go2();">응하지 않았다</button>
+    </div>
+
+<script>
+
+var temp;
+function input(){
+var input = document.getElementById("input").value;
+temp = input;
+}
+
+function output(){
+document.getElementById("output").value = temp;
+document.getElementById("output").innerHTML = temp;
+}
+
+function go(){
+  location.replace("metroJoseon_scene8hidden1.html");
+}
+
+function go2(){
+  location.replace("metroJoseon_scene7.html");
+}
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>월드플레이 - Rule,Role,Play Your World!</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- 화면 캡쳐 CDN -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script type="text/javascript">
+      state = 0;
+      function changeImage(){
+        if(state == 0) {
+          state = 1;
+          document.getElementById('image').src = "하늘의 사신방(이건 나중에 쓰면 안됨).jpeg";
+          setTimeout(function() {
+          document.getElementById('image').src = "28수.jpg";}, 1500);
+        }
+        else {
+          state = 0;
+          document.getElementById('image').src = "마법진효과.jpeg";
+        };
+      };
+    </script>
+  </head>
+  <body style="background-color:#E8C585">
+    <div id="game-title">
+      <h1>근정전 : 잠들어 있는 사방신을 깨워라</h1>
+    </div>
+
+  <div class="storyquest">
+    <img id="image" onclick="changeImage()" border="0" width="500" height="600" src="마법진효과.jpeg" alt="봉인해제 마법진효과 및 사신방 잠깐" />
+
+    <p>
+      봉인을 해제하자 굉장한 울림이 주변의 공간을 가득채운다. 그리고 빛이 하늘로 솟구쳐오르더니 창공 너머로 사라졌다. <br>
+      아주 잠깐 사방신의 모습이 보이더니 이내 사라지고 내 앞에 무언가 떨어진다. <br>
+
+<!--스샷 버튼--->
+    <button type="button" id="save" class="btn btn-primary">획득!</button> <br><br>
+
+<!---스샷한 이미지를 띄우기 위한 div -->
+
+     <div id="inventory"></div>
+
+     <button type="button" class="btn btn-primary" onclick="go();">다음으로</button>
+
+    </div>
+
+    <script>
+    $(function(){
+    $("#save").on("click", function(){
+    // 캡쳐 라이브러리를 통해서 canvas 오브젝트를 받고 이미지 파일로 리턴한다.
+    html2canvas(document.querySelector("#image")).then(canvas => {
+    saveAs(canvas.toDataURL('image/png'),"capture-test.png");
+    });
+    });
+    function saveAs(uri, filename) {
+    // 캡쳐된 파일을 이미지 파일로 내보낸다.
+    var link = document.createElement('a');
+    if (typeof link.download === 'string') {
+    link.href = uri;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    } else {
+    window.open(uri);
+    }
+    }
+    });
+
+
+    function go(){
+      location.replace("metroJoseon_scene52.html");
+    }
+    </script>
+
+  </body>
+</html>

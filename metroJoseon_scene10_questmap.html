@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>조선메트로3호선 퀘스트</title>
+<style>
+.label{
+	-webkit-animation:blink 0.5s ease-in-out infinite alternate;
+    -moz-animation:blink 0.5s ease-in-out infinite alternate;
+    animation:blink 0.5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+  .label {margin-bottom: 96px;}
+  .label * {display: inline-block;vertical-align: top;}
+  .label .left {background: url("http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+  .label .center {background: url(http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+  .label .right {background: url("http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+</style>
+</head>
+
+<body style="background-color:#E8C585">
+  <div id="game-title">
+    <h1 style="margin: 0 auto;">태조를 만날 수 있는 장소는?</h1>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="storyquest_answercorrect">
+    <p>그렇다! 정답은 '국립고궁박물관'이었다. <br>
+      </p>
+  </div>
+
+
+<div id="map" style="width:90%;height:500px;"></div>
+<p><em>마커를 클릭해주세요!</em></p>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e94441f67a1f4bc731eaddb110bf8481&libraries=services"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+    mapOption = {
+        center: new kakao.maps.LatLng(37.57664429390979, 126.97481745189965), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 커스텀 오버레이에 표시할 내용입니다
+// HTML 문자열 또는 Dom Element 입니다
+var content = '<div class ="label"><span class="left"></span><span class="center"><a href="metroJoseon_scene11.html">Quest!!</a></span><span class="right"></span></div>';
+
+// 커스텀 오버레이가 표시될 위치입니다
+var position = new kakao.maps.LatLng(37.57664429390979, 126.97481745189965);
+
+// 커스텀 오버레이를 생성합니다
+var customOverlay = new kakao.maps.CustomOverlay({
+    position: position,
+    content: content
+});
+
+// 커스텀 오버레이를 지도에 표시합니다
+customOverlay.setMap(map);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---
+
+
+// 마커를 표시할 위치입니다
+var position =  new kakao.maps.LatLng(37.57664429390979, 126.97481745189965);
+
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({
+  position: position,
+  clickable: true // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
+});
+
+// 아래 코드는 위의 마커를 생성하는 코드에서 clickable: true 와 같이
+// 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
+// marker.setClickable(true);
+
+// 마커를 지도에 표시합니다.
+marker.setMap(map);
+
+// 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
+var iwContent = '<div style="padding:5px;"><a href="metroJoseon_scene11.html">Quest!!</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+    iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+// 인포윈도우를 생성합니다
+var infowindow = new kakao.maps.InfoWindow({
+    content : iwContent,
+    removable : iwRemoveable
+});
+
+// 마커에 클릭이벤트를 등록합니다
+kakao.maps.event.addListener(marker, 'click', function() {
+      // 마커 위에 인포윈도우를 표시합니다
+      infowindow.open(map, marker);
+});
+</script>
+</body>
+</html>
+
+--->

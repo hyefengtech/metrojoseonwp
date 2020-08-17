@@ -1,0 +1,55 @@
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>월드플레이 - Rule,Role,Play Your World!</title>
+  </head>
+  <body style="background-color:#E8C585">
+    <div id="game-title">
+      <h1>삼봉 정도전의 두번째 미션: 경복궁설계 - 근정전</h1>
+    </div>
+
+    <br>
+    <br>
+
+  <div class="storyquest">
+    <img src="김학수북궐도.jpg" alt="경복궁 내부지도">
+    <p>  <br>
+       <br>
+
+  <!---천록 4마리가 위치한 지도를 얻는다
+월드플레이에서 제공하는 천록이미지를 푸시해서 보인다--->
+<script>
+var description= new Array()
+
+description[0]="이곳은 영제교. 오늘은 사람이 북적거린다.";
+description[1]="영제교(永濟橋)는 경복궁의 광화문(光化門), 흥례문(興禮門), 근정문(勤政門)을 연결하는 진입축의 흥례문과 근정문 사이의 마당에 있는 석조 홍예교이다.";
+description[2]="영제교는 궁역의 북쪽에서부터 흘러 들어온 금천을 건너는 다리였다.";
+description[3]="예전에 물이 흘렀던 흔적이 있다";
+description[4]="졸려";
+
+var whichquote=Math.floor(Math.random()*(description.length))
+document.write(description[whichquote])
+</script>
+      <br>
+
+     </p>
+
+  <button type="button" class="btn btn-primary" name="button" onclick="go();">주위를 계속 둘러본다.</button> <br><br>
+  <button type="button" class="btn btn-primary" name="button" onclick="go2();">근정전으로 돌아간다.</button> <br><br>
+
+  <script>
+  function go(){
+    location.replace("metroJoseon_scene36.html");
+  }
+  function go2(){
+    location.replace("metroJoseon_scene37.html");
+  }
+  </script>
+
+
+  </body>
+</html>

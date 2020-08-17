@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>조선메트로3호선 퀘스트</title>
+<style>
+.label{
+	-webkit-animation:blink 0.5s ease-in-out infinite alternate;
+    -moz-animation:blink 0.5s ease-in-out infinite alternate;
+    animation:blink 0.5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+  .label {margin-bottom: 96px;}
+  .label * {display: inline-block;vertical-align: top;}
+  .label .left {background: url("http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+  .label .center {background: url(http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+  .label .right {background: url("http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+</style>
+</head>
+
+<body style="background-color:#E8C585">
+  <div id="game-title">
+    <h1 style="margin: 0 auto;">큰 복을 누리는 곳으로</h1>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="storyquest_answercorrect">
+    <p> 광화문 앞에 도착했다. <br>
+      </p>
+  </div>
+
+
+<div id="map" style="width:90%;height:500px;"></div>
+<p><em>마커를 클릭해주세요!</em></p>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e94441f67a1f4bc731eaddb110bf8481&libraries=services"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+    mapOption = {
+        center: new kakao.maps.LatLng(37.57664429390979, 126.97481745189965), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 커스텀 오버레이에 표시할 내용입니다
+// HTML 문자열 또는 Dom Element 입니다
+var content = '<div class ="label"><span class="left"></span><span class="center"><a href="metroJoseon_scene16.html">광화문</a></span><span class="right"></span></div>';
+
+// 커스텀 오버레이가 표시될 위치입니다
+var position = new kakao.maps.LatLng(37.575941944259256, 126.97690064875526);
+
+// 커스텀 오버레이를 생성합니다
+var customOverlay = new kakao.maps.CustomOverlay({
+    position: position,
+    content: content
+});
+
+// 커스텀 오버레이를 지도에 표시합니다
+customOverlay.setMap(map);
+</script>
+</body>
+</html>

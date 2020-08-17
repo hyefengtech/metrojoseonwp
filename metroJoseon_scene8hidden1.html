@@ -1,0 +1,45 @@
+<!---제안에 응한다는 카톡을 보내고 나서 정도전이 조선으로 가는 포털을 열어줌. 포탈을 여는 주문을 적어라. 주문은 정도전과의 카톡에서 알 수 있다--->
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>월드플레이 - Rule,Role,Play Your World!</title>
+  </head>
+  <body style="background-color:#E8C585">
+    <div id="game-title">
+      <h1>삼봉 정도전의 첫번째 미션</h1>
+    </div>
+
+  <br>
+  <br>
+
+
+  <div class="hint_askSambong">
+    <img src="정도전초상화.jpg" alt="삼봉정도전 초상화" /> <br> <br>
+    <p>조선으로 가는 포털을 여는 '주문'을 적어주세요. (띄어쓰기 포함,문자 미포함)</p>
+    <p>정답을 모르겠다면, '삼봉'을 입력해주세요.
+  </div>
+
+    <div class="answer">
+      <form name=form_id>
+        <input name=textbox_id type="text" id="answer" placeholder="입력하세요."> <br><br>
+        <button type="button" class="btn btn-primary" name="button" onclick="To_Noname();" value="이동">입력</button> <br><br>
+        <button type="button" class="btn btn-primary" name="button" onclick="To_Noname();" value="이동">돌아가기</button>
+      </form>
+    </div>
+</body>
+
+<script language=javascript>
+function To_Noname(){
+if(document.form_id.textbox_id.value === "우리 전하 태조를 만나러 가게나"){
+  window.location.href="metroJoseon_scene8hidden2.html";//현재페이지의 주소를 해당페이지로 바꿉니다.
+}else{
+  location.href="metroJoseon_scene6.html";
+  }
+};
+</script>
+
+</html>

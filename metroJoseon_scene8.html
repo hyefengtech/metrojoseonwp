@@ -1,0 +1,43 @@
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>월드플레이 - Rule,Role,Play Your World!</title>
+  </head>
+  <body style="background-color:#E8C585">
+    <div id="game-title">
+      <h1>삼봉 정도전의 첫번째 미션</h1>
+    </div>
+
+  <br>
+  <br>
+
+
+  <div class="hint_askSambong">
+    <img src="정도전초상화.jpg" alt="삼봉정도전 초상화" /> <br> <br>
+    <p>"태조를 만나러 어디로 가야할까?"</p>
+    <p>정답을 모르겠다면, '삼봉'을 입력해주세요.
+  </div>
+
+    <div class="answer">
+      <form name=form_id>
+        <input name=textbox_id type="text" id="answer" placeholder="입력하세요."> <br><br>
+        <button type="button" class="btn btn-primary" name="button" onclick="To_Noname();" value="이동">입력</button>
+      </form>
+    </div>
+</body>
+
+<script language=javascript>
+function To_Noname(){
+if(document.form_id.textbox_id.value === "국립고궁박물관"){
+  window.location.href="metroJoseon_scene10_questmap.html";//현재페이지의 주소를 해당페이지로 바꿉니다.
+}else{
+  location.href="metroJoseon_back.html";
+  }
+};
+</script>
+
+</html>

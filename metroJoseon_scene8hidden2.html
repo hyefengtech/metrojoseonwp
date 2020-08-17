@@ -1,0 +1,62 @@
+<!---제안에 응한다는 카톡을 보내고 나서 정도전이 조선으로 가는 포털을 열어줌. 포탈이 열리는 효과 --->
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>월드플레이 - Rule,Role,Play Your World!</title>
+    <script type="text/javascript">
+      state = 0;
+      function changeImage(){
+        if(state == 0) {
+          state = 1;
+          document.getElementById('image').src = "지하철내부사진.jpg";
+        }
+        else {
+          state = 0;
+          document.getElementById('image').src = "time-warp.jpg";
+        }
+      }
+    </script>
+
+  </head>
+  <body style="background-color:#E8C585">
+    <div id="game-title">
+      <h1>삼봉 정도전의 첫번째 미션</h1>
+    </div>
+
+  <br>
+  <br>
+
+
+  <div class="hint_askSambong">
+    <img id="image" onclick="changeImage()" border="0" src="time-warp.jpg"  /> <br> <br>
+    <p>무언가 환한 빛이 순식간에 번쩍였다.</p>  <br>
+    <p>이게 정도전이 말한 '조선으로 가는 문'이 열렸다는 것이겠지. 하지만 빛이 번쩍인 것은 잠시일뿐 다시 원래 내가 있던 장소와 시간이다.</p>  <br>
+    <p>착각이었나....?</p> <br>
+    <p>나는 손에 쥐고 있는 휴대폰 속 카톡내역을 보았다. 아니, 분명 여전히 정도전과의 톡이 남아있다.</p> <br><br>
+
+    <p>태조를 만나러 어디로 가야하는 걸까? 혹시 정도전은 알려줄까?</p> <br>
+  </div>
+
+    <div class="answer">
+      <form name=form_id>
+        <input name=textbox_id type="text" id="answer" placeholder="입력하세요."> <br><br>
+        <button type="button" class="btn btn-primary" name="button" onclick="To_Noname();" value="이동">입력</button>
+      </form>
+    </div>
+</body>
+
+<script language=javascript>
+function To_Noname(){
+if(document.form_id.textbox_id.value === "국립고궁박물관"){
+  window.location.href="metroJoseon_scene9.html";//현재페이지의 주소를 해당페이지로 바꿉니다.
+}else{
+  location.href="metroJoseon_back.html";
+  }
+};
+</script>
+
+</html>

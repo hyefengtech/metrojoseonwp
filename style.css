@@ -1,0 +1,15 @@
+html,body, div {
+  margin: 0;
+  padding: 0;
+  background-color: #E8C585;
+}
+
+#game-title, #game-info, #synopsis, #start-button, .storyquest,.choice,.hint_askSambong,.answer, .storyquest_answercorrect, .next{
+  margin: 0 auto; /* 가운데정렬 */
+  width: 1080px;
+}
+
+img {
+  width: 500px;
+  height: 600px;
+}

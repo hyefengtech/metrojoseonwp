@@ -1,0 +1,53 @@
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>월드플레이 - Rule,Role,Play Your World!</title>
+  </head>
+  <body style="background-color:#E8C585">
+    <div id="game-title">
+      <h1>삼봉 정도전의 두번째 미션: 경복궁설계 - 근정전</h1>
+    </div>
+
+    <br>
+    <br>
+
+  <div class="storyquest">
+    <img src="김학수북궐도.jpg" alt="경복궁 내부지도">
+    <p> 좋아, 근정전이 정문이 바로 보이는데서부터 차근차근 살펴보자. <br>
+      왕좌에서 정면으로 마주하는 방향은 남향이다. <br><br>
+  <br>
+
+     <br>
+    </p>
+
+    <div class="hint_askSambong" style="background-color:#E8C585">
+      <p>내가 서 있는 이 상월대 남쪽에는 어떤 상이 놓여야하는 걸까?
+    </div>
+
+    <div class="answer">
+      <form name=form_id>
+        <input name=textbox_id type="text" id="answer" placeholder="입력하세요." autocomplete="off">
+        <br>
+        <br>
+      </form>
+      <button type="button" class="btn btn-primary" name="button" onclick="To_Noname();" value="이동">입력</button>
+      <br>
+      <br>
+    </div>
+    </body>
+
+    <script language=javascript>
+    function To_Noname(){
+    if(document.form_id.textbox_id.value === "주작"){
+    window.location.href="metroJoseon_scene42.html";//현재페이지의 주소를 해당페이지로 바꿉니다.
+    }else{
+    location.href="noname3.html";
+    }
+    };
+    </script>
+  </body>
+</html>

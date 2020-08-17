@@ -1,0 +1,38 @@
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>월드플레이 - Rule,Role,Play Your World!</title>
+  </head>
+  <body style="background-color:#E8C585">
+    <div id="game-title">
+      <h1>삼봉 정도전의 두번째 미션: 경복궁설계</h1>
+    </div>
+
+    <br>
+    <br>
+
+  <div class="storyquest">
+    <img src="정도전초상화.jpg" alt="삼봉정도전 초상화" /> <br> <br>
+    <p>나는 이미 경복궁의 설계 도안의 청사진을 그려놓았네. <br>
+     한데 이것 외에도 내가 해야할 일이 있어서 전각 이름을 지어놓긴 했는데 아직 현판을 걸지는 못했다네.</p>
+    <p>그대가 도와줄 일이 바로 이것이네. <br> 다른 일로 바쁜 나를 대신해서 각 건물의 현판을 거는 것을 도와주게나.
+    <br>  </p>
+
+  <button type="button" class="btn btn-primary" name="button" onclick="go();">알겠습니다.</button> <br><br>
+  <button type="button" class="btn btn-primary" name="button" onclick="go2();">다른 것을 돕고 싶습니다만...</button>
+
+  <script>
+  function go(){
+    location.replace("metroJoseon_scene20.html");
+  }
+
+  function go2(){
+    location.replace("metroJoseon_scene21.html");
+  }
+  </script>
+  </body>
+</html>
