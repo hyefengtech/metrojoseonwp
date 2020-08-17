@@ -1,3 +1,3 @@
 # metrojoseonwp
 
-[https://tech.worldplay.kr/metrojoseonwp/metroJoseon_aunlockcode.html]
+[게임시작](https://tech.worldplay.kr/metrojoseonwp/metroJoseon_aunlockcode.html)
