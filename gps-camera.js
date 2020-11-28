@@ -28,25 +28,9 @@ AFRAME.registerComponent('gps-camera', {
         minDistance: {
             type: 'int',
             default: 0,
-        },
-        maxDistance: {
-            type: 'int',
-            default: 0,
         }
     },
-    update: function() {
-        if (this.data.simulateLatitude !== 0 && this.data.simulateLongitude !== 0) {
-            localPosition = Object.assign({}, this.currentCoords || {});
-            localPosition.longitude = this.data.simulateLongitude;
-            localPosition.latitude = this.data.simulateLatitude;
-            localPosition.altitude = this.data.simulateAltitude;
-            this.currentCoords = localPosition;
 
-            // re-trigger initialization for new origin
-            this.originCoords = null;
-            this._updatePosition();
-        }
-    },
     init: function () {
         if (!this.el.components['look-controls']) {
             return;
@@ -60,6 +44,7 @@ AFRAME.registerComponent('gps-camera', {
             // if places are added after camera initialization is finished
             if (this.originCoords) {
                 window.dispatchEvent(new CustomEvent('gps-camera-origin-coord-set'));
+                console.debug('gps-camera-origin-coord-set');
             }
             if (this.loader && this.loader.parentElement) {
                 document.body.removeChild(this.loader)
@@ -98,7 +83,7 @@ AFRAME.registerComponent('gps-camera', {
         window.addEventListener(eventName, this._onDeviceOrientation, false);
 
         this._watchPositionId = this._initWatchGPS(function (position) {
-            if (this.data.simulateLatitude !== 0 && this.data.simulateLongitude !== 0) {
+            if(this.data.simulateLatitude !== 0 && this.data.simulateLongitude !== 0) {
                 localPosition = Object.assign({}, position.coords);
                 localPosition.longitude = this.data.simulateLongitude;
                 localPosition.latitude = this.data.simulateLatitude;
@@ -108,6 +93,7 @@ AFRAME.registerComponent('gps-camera', {
             else {
                 this.currentCoords = position.coords;
             }
+
 
             this._updatePosition();
         }.bind(this));
@@ -214,9 +200,10 @@ AFRAME.registerComponent('gps-camera', {
 
             var loader = document.querySelector('.arjs-loader');
             if (loader) {
-                loader.remove();
+                document.body.removeChild(loader)
             }
             window.dispatchEvent(new CustomEvent('gps-camera-origin-coord-set'));
+            console.debug('gps-camera-origin-coord-set');
         } else {
             this._setPosition();
         }
@@ -245,7 +232,8 @@ AFRAME.registerComponent('gps-camera', {
         // update position
         this.el.setAttribute('position', position);
 
-        window.dispatchEvent(new CustomEvent('gps-camera-update-position', { detail: { position: this.currentCoords, origin: this.originCoords } }));
+
+        window.dispatchEvent(new CustomEvent('gps-camera-update-position', { detail: { position: this.currentCoords, origin: this.originCoords }}));
     },
     /**
      * Returns distance in meters between source and destination inputs.
@@ -268,14 +256,8 @@ AFRAME.registerComponent('gps-camera', {
         var distance = angle * 6378160;
 
         // if function has been called for a place, and if it's too near and a min distance has been set,
-        // return max distance possible - to be handled by the caller
+        // return max distance possible - to be handled by the  method caller
         if (isPlace && this.data.minDistance && this.data.minDistance > 0 && distance < this.data.minDistance) {
-            return Number.MAX_SAFE_INTEGER;
-        }
-
-        // if function has been called for a place, and if it's too far and a max distance has been set,
-        // return max distance possible - to be handled by the caller
-        if (isPlace && this.data.maxDistance && this.data.maxDistance > 0 && distance > this.data.maxDistance) {
             return Number.MAX_SAFE_INTEGER;
         }
 
