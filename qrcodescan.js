@@ -1,22 +1,22 @@
-//document.addEventListener("DOMContentLoaded", function() {
-//
-//  var video = document.createElement("video");
- // var canvasElement = document.getElementById("canvas");
- // var canvas = canvasElement.getContext("2d");
-//  var loadingMessage = document.getElementById("loadingMessage");
-//  var outputContainer = document.getElementById("output");
-//  var outputMessage = document.getElementById("outputMessage");
-//  var outputData = document.getElementById("outputData");
+document.addEventListener("DOMContentLoaded", function() {
 
- // function drawLine(begin, end, color) {
+ var video = document.createElement("video");
+ var canvasElement = document.getElementById("canvas");
+ var canvas = canvasElement.getContext("2d");
+ var loadingMessage = document.getElementById("loadingMessage");
+ var outputContainer = document.getElementById("output");
+ var outputMessage = document.getElementById("outputMessage");
+ var outputData = document.getElementById("outputData");
 
- //   canvas.beginPath();
- //   canvas.moveTo(begin.x, begin.y);
-//    canvas.lineTo(end.x, end.y);
-//    canvas.lineWidth = 4;
-//    canvas.strokeStyle = color;
-//    canvas.stroke();
-//              }
+function drawLine(begin, end, color) {
+
+  canvas.beginPath();
+  canvas.moveTo(begin.x, begin.y);
+  canvas.lineTo(end.x, end.y);
+  canvas.lineWidth = 4;
+  canvas.strokeStyle = color;
+  canvas.stroke();
+}
         
 // 카메라 사용시
   navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
