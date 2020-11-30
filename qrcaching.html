@@ -13,6 +13,13 @@
     <script src="gps-entity-place.js"></script>
     <script src="gps-camera-debug.js"></script>
     <script>
+      window.onload = ()=> {
+        navigator.geolocation.getCurrentPosition((position) => {
+          document.querySelector('a-plane').setAttribute('gps-entity-place',`latitude:${position.coords.latitude}; longitude:${position.coords.longitude};`)
+        });
+}
+    </script>
+    <script>
     window.onload = function () {
       document
         .querySelector(".capture")
@@ -58,7 +65,7 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-    <a-plane src="채용지원큐알코드.jpg" look-at="[gps-camera]" height="0.5" width="0.5" color="grey" position="-2 1 0" scale="1 1 1" gps-entity-place="latitude: 37.32223965865335;, longitude: 127.11026595323912;"></a-plane>
+    <a-plane src="채용지원큐알코드.jpg" look-at="[gps-camera]" height="0.5" width="0.5" color="grey" position="-2 1 0" scale="1 1 1"> <!--gps-entity-place="latitude: 37.32223965865335;, longitude: 127.11026595323912;"--></a-plane>
      <!--<a-image>
           look-at="[gps-camera]"
           gps-entity-place="latitude: 37.322384951298595;, longitude: 127.11063726298522;"
